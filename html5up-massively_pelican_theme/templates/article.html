@@ -1,7 +1,13 @@
 {% extends "base.html" %}
 {% block html_lang %}{{ article.lang }}{% endblock %}
 
-{% block title %}{{ SITENAME }} - {{ article.title|striptags  }}{% endblock %}
+
+{% block title %}
+
+
+
+
+{{ SITENAME }} - {{ article.title|striptags  }}{% endblock %}
 
 {% block head %}
   {{ super() }}
@@ -10,6 +16,34 @@
   {% if translations.entry_hreflang(article) %}
     {{ translations.entry_hreflang(article) }}
   {% endif %}
+
+  		<!-- Wrapper shows backround image-->
+      <div id="wrapper">
+
+
+        <!-- Header -->
+        <header id="header">
+          <a href="index.html" class="logo">{{ SITENAME }}</a>
+        </header>
+				<!-- Nav -->
+        <nav id="nav">
+          <ul class="links">
+            <li><a href="index.html">This is Massively</a></li>
+            <li class="active"><a href="generic.html">Generic Page</a></li>
+            <li><a href="elements.html">Elements Reference</a></li>
+          </ul>
+          <ul class="icons">
+            <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+            <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+            <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+          </ul>
+        </nav>
+
+        				<!-- Main -->
+
+        <div id="main">
+
 
   {% if article.description %}
     <meta name="description" content="{{article.description}}" />
@@ -22,16 +56,9 @@
 {% endblock %}
 
 {% block content %}
-<section id="content" class="body">
-  <header>
-    <h2 class="entry-title">
-      <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
-         title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2>
- {% import 'translations.html' as translations with context %}
- {{ translations.translations_for(article) }}
-  </header>
-  <footer class="post-info">
-    <time class="published" datetime="{{ article.date.isoformat() }}">
+<section class="post">
+  <header class="major">
+    <time class="date" datetime="{{ article.date.isoformat() }}">
       {{ article.locale_date }}
     </time>
     {% if article.modified %}
@@ -39,6 +66,14 @@
       {{ article.locale_modified }}
     </time>
     {% endif %}
+    <h1>
+      <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
+         title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h1>
+ {% import 'translations.html' as translations with context %}
+ {{ translations.translations_for(article) }}
+  </header>
+  <footer class="post-info">
+
     {% if article.authors %}
     <address class="vcard author">
       By {% for author in article.authors %}
@@ -65,3 +100,5 @@
   </div><!-- /.entry-content -->
 </section>
 {% endblock %}
+</div>
+</div>
