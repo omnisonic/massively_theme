@@ -3,7 +3,10 @@ SITENAME = 'massively-theme'
 SITEURL = ''
 
 PATH = 'content'
-THEME='simple'
+THEME='html5up-massively_pelican_theme'
+
+DISPLAY_PAGES_ON_MENU = True
+DISPLAY_CATEGORIES_ON_MENU = False
 
 TIMEZONE = 'America/Los_Angeles'
 
