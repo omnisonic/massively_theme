@@ -55,7 +55,8 @@
 									<li><a href="{{ SITEURL }}/{{ article.url }}" class="button large">Full Story</a></li>
 								</ul>
 							</article>
-    {% endif %}
+        {% else %}                    
+
 <section class="posts">
     <article>
         <header>
@@ -66,6 +67,7 @@
         <address class="vcard author">By
             {% for author in article.authors %}
                 <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
+    
             {% endfor %}
             </address>
         <a href="{{ SITEURL }}/{{ article.url }}" class="image fit">{{article.image}}</a>
@@ -74,7 +76,7 @@
             <li><a href="{{ SITEURL }}/{{ article.url }}" class="button">Full Story</a></li>
         </ul>
     </article>
-
+    {% endif %}
 {% endfor %}
 
 {% if articles_page.has_other_pages() %}
