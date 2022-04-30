@@ -41,6 +41,21 @@
                 <div id="main">
 
 {% for article in articles_page.object_list %}
+    {% if article.featured %}
+        						<!-- Featured Post -->
+							<article class="post featured">
+								<header class="major">
+                                    <span class="date"> {{ article.locale_date }}</span>
+									<h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}<br />
+                                        ipsum faucibus</a></h2></h2>
+									<p>{{ article.summary }}.</p>
+								</header>
+								<a href="{{ SITEURL }}/{{ article.url }}" class="image main">{{article.image}}</a>
+								<ul class="actions special">
+									<li><a href="{{ SITEURL }}/{{ article.url }}" class="button large">Full Story</a></li>
+								</ul>
+							</article>
+    {% endif %}
 <section class="posts">
     <article>
         <header>
