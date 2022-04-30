@@ -3,6 +3,7 @@ SITENAME = 'massively-theme'
 SITEURL = ''
 
 PATH = 'content'
+THEME='simple'
 
 TIMEZONE = 'America/Los_Angeles'
 
