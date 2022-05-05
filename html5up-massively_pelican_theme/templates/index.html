@@ -1,11 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-<section id="content">
+
     {% block content_title %}
     <h2>All articles</h2>
     {% endblock content_title%}
 
-    <!-- Wrapper -->
     <div id="wrapper" class="fade-in">
         <!-- Intro -->
         <div id="intro">
@@ -21,12 +20,16 @@
             </ul>
         </div>
         <!-- Header -->
-        <header id="header">
+        <!-- <header id="header">
             <a href="index.html" class="logo">Massively</a>
-        </header>
+        </header> -->
 
         <!-- Nav -->
-        <nav id="nav">
+
+        {% block nav %}
+        {{ super() }}
+        {% endblock nav %}
+        <!-- <nav id="nav">
             <ul class="links">
                 <li class="active"><a href="index.html">This is Massively</a></li>
                 <li><a href="generic.html">Generic Page</a></li>
@@ -38,9 +41,10 @@
                 <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
                 <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
             </ul>
-        </nav>
-
+        </nav> -->
         <!-- Main -->
+
+
         <div id="main">
 
             {% for article in articles_page.object_list %}
@@ -49,8 +53,7 @@
             <article class="post featured">
                 <header class="major">
                     <span class="date"> {{ article.locale_date }}</span>
-                    <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}<br />
-                            ipsum faucibus</a></h2>
+                    <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
                     </h2>
                     <p>{{ article.summary }}.</p>
                 </header>
@@ -69,8 +72,7 @@
                 <article>
                     <header>
                         <span class="date"> {{ article.locale_date }}</span>
-                        <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}<br />
-                                ipsum faucibus</a></h2>
+                        <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
                     </header>
                     <address class="vcard author">By
                         {% for author in article.authors %}

@@ -4,7 +4,7 @@ SITEURL = ''
 
 PATH = 'content'
 THEME='html5up-massively_pelican_theme'
-
+MENUITEMS = (('This is Massively','.'),)
 DISPLAY_PAGES_ON_MENU = True
 DISPLAY_CATEGORIES_ON_MENU = False
 
