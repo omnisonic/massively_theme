@@ -83,11 +83,21 @@
       {% endif %}
     </ul>
 
-      <ul class="icons">
+      <!-- <ul class="icons">
         <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
         <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
         <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
         <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+      </ul> -->
+
+      <ul class="icons">
+        {% for name, link in SOCIAL %}
+          <li>
+            <a class="" href="{{ link }}" target="_blank">
+              <i class="{% if name in ['rss'] %}fas{% else %} icon brands {% endif %} fa-{{ name }}"></i>
+            </a>
+          </li>
+        {% endfor %}
       </ul>
     </nav><!-- /#menu -->
     {% endblock nav %}
