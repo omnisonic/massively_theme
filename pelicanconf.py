@@ -8,6 +8,12 @@ MENUITEMS = (('This is Massively','.'),)
 DISPLAY_PAGES_ON_MENU = True
 DISPLAY_CATEGORIES_ON_MENU = False
 
+
+# Massivley variables:
+FORMSPREE = 'https://formspree.io/f/xnqwdnle'
+ADDRESS = ' set this variable in pelicanconf.py'
+PHONE = ' set this variable in pelicanconf.py'
+EMAIL = 'set this variable in pelicanconf.py'
 TIMEZONE = 'America/Los_Angeles'
 
 DEFAULT_LANG = 'en'
