@@ -4,7 +4,7 @@ SITEURL = ''
 
 PATH = 'content'
 THEME='html5up-massively_pelican_theme'
-MENUITEMS = (('This is Massively','.'),)
+MENUITEMS = (('This is Massively','index.html'),)
 DISPLAY_PAGES_ON_MENU = True
 DISPLAY_CATEGORIES_ON_MENU = False
 
@@ -15,6 +15,8 @@ ADDRESS = ' set this variable in pelicanconf.py'
 PHONE = ' set this variable in pelicanconf.py'
 EMAIL = 'set this variable in pelicanconf.py'
 TIMEZONE = 'America/Los_Angeles'
+
+BLOG_INDEX = 'index.html'
 
 DEFAULT_LANG = 'en'
 

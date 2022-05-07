@@ -63,14 +63,19 @@
 
     <!-- Header -->
     <header id="header">
-      <a href="index.html" class="logo">{{ SITENAME }}</a>
+      <a href="/index.html" class="logo">{{ SITENAME }}</a>
     </header>
 
     <nav id="nav">
       <ul class="links">
+
+
         {% for title, link in MENUITEMS %}
-        <li><a href="/{{ link }}">{{ title }}</a></li>
+        <li{% if link == active_page %} class="active" {% endif %}><a href="/{{ link }}">{{ title }}</a></li>
         {% endfor %}
+
+       {# {% if BLOG_INDEX %}  #}
+
         {% if DISPLAY_PAGES_ON_MENU %}
         {% for p in pages %}
         <li{% if p==page %} class="active" {% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
